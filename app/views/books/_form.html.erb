@@ -1,0 +1,7 @@
+<%= simple_form_for @book, :html => { :multipart => true } do |f| %>
+	<%= f.input :title, label: "Title of Book" %>
+	<%= f.input :description, label: "Description" %>
+	<%= f.input :author, label: "Authors"%>
+    <%= f.input :links, label: "Links" %>
+	<%= f.button :submit, :class => 'btn-custom2' %>
+<% end %>

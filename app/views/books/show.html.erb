@@ -1,0 +1,7 @@
+<h2><%= @book.title %> </h2>
+<h3><%= @book.author %> </h2>
+<p><%= @book.description %> </p>
+<h4><%= @book.links %></h4>
+
+<%= link_to "Edit", edit_book_path(@book) %>
+<%= button_to "Delete", book_path(@book), method: :destroy, data: {confirm: "Are you sure?" }, class: "btn btn-custom" %>
