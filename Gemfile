@@ -27,8 +27,10 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'paperclip', '~> 4.2.1'
 gem 'uglifier', '~> 4.2'
 gem 'coffee-rails', '~> 5.0'
-gem 'jquery-rails', '~> 4.4'
-
+gem 'ransack'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
