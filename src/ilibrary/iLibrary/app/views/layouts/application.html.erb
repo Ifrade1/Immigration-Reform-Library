@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ILbrary</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <title>Immigration Library</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
   </head>
 
+
   <body>
+    <%= render 'partials/navbar' %>
+      <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
     <%= yield %>
   </body>
 </html>

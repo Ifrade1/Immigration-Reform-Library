@@ -1,0 +1,13 @@
+<%= simple_form_for @book, :html => { :multipart => true } do |f| %>
+	<%= f.input :title, label: "Title of Book" %>
+<div class="form-group">
+   <%= f.input :description, label: "Description" %>
+  </div>
+	<%= f.input :author, label: "Authors"%>
+    <%= f.input :links, label: "Links" %>
+	<div class = "category-id" >
+	 <label for="category-id">Category</label>
+	 <%= select_tag(:category_id, options_for_select(@categories)) %>
+	 </div>
+	<%= f.button :submit, :class => 'btn-custom2' %>
+<% end %>
