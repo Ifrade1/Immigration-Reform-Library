@@ -33,36 +33,41 @@
 
 body {
 	background-color: #f5f5f5;
-	font-family: 'Lora', serif;
+	font-family: 'Palatino', 'URW Palladio L', serif;
 	margin-left: 25px;
 	margin-right: 25px;
+	margin-right: 25px;
+	font-size: 2em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Palatino', 'URW Palladio L', serif;
+	margin-top: 10px; 
 	font-weight: 300;
 }
 
 p.alert, p.notice {
 	margin: 0;
 }
-
+body { 
+    padding-top: 30px; 
+}
 
 /* Navbar/navigation styles */
 
 .navbar {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Palatino', 'URW Palladio L', serif;
 	text-transform: uppercase;
 }
 .navbar{
-	background-color: #fff;
-	color: rgb(47, 180, 13);
+	background-color:  rgb(47, 180, 13);
+	color: #fff;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	margin-left: -5px;
 	margin-right: -25px;
 	.navbar-nav > li > a {
-		color: #222;
+		color: #fff;
 		&:hover {
 			color: darken(#107a27, 5%);
 			transition: 0.5s;
@@ -99,17 +104,17 @@ p.alert, p.notice {
 /* Button/link styles */
 
 .btn-custom {
-	color: darken(#107a27, 5%);
 	background-color: #fff;
 	border: 1px solid darken(#107a27, 5%);
 	padding: 8px 20px;
 	margin-bottom: 10px;
 	border-radius: 5px;
-	font-family: 'Ubuntu', sans-serif;
+	display: inline-block;
+	font-family: 'Palatino', 'URW Palladio L', serif;
 	&:hover {
 		text-decoration: none;
-		background-color: darken(#107a27, 5%);
-		color: rgb(43, 187, 24);
+		background-color: darken(#40d661, 5%);
+		color: #fff;
 		transition: 0.5s;
 	}
 }
@@ -121,7 +126,7 @@ p.alert, p.notice {
 	text-color: #fff;
 	padding: 8px 20px;
 	border-radius: 5px;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Palatino', 'URW Palladio L', serif;
 	&:hover {
 		text-decoration: none;
 		background-color: #333;
@@ -152,16 +157,12 @@ p.alert, p.notice {
 /* Book styles */
 
 .book {
-	height: 350px;
-	width: 250px;
 	margin-bottom: 40px;
-	@include background-tile;
 }
 
 .book-show {
 	height: 475px;
 	width: 325px;
-	@include background-tile;
 }
 
 .book-info {
@@ -169,7 +170,7 @@ p.alert, p.notice {
 
 	.book-title {
 		margin-top: 0;
-		font-size: 2em;
+		font-size: 10em;
 	}
 
 
@@ -205,6 +206,7 @@ p.alert, p.notice {
 	@include background-tile;
 
 	h1 {
+		padding-top: 10px;
 		margin-top: 0;
 	}
 

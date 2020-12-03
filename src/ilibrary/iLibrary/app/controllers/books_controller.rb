@@ -4,19 +4,18 @@ class BooksController < ApplicationController
     #defines index page
     def index
 		if params[:category].blank?
-			@books = Book.all.order("created_at DESC")
+            @books = Book.all.order("created_at DESC")
+             @q = Book.ransack(params[:q])
+             @books = @q.result(distinct: true)
 		else
 			@category_id = Category.find_by(name: params[:category]).id
-			@books = Book.where(:category_id => @category_id).order("created_at DESC")
+            @books = Book.where(:category_id => @category_id).order("created_at DESC")
         end
-        @q = Book.ransack(params[:q])
-        @books = @q.result
-        puts @books
+        
     end
     def search
-        @search = Book.ransack(params[:search])
-        @books = @search.result(distinct: true)
-        puts @books
+        @q = Book.ransack(params[:q])
+        @books = @q.result(distinct: true)
     end
    def show
         
