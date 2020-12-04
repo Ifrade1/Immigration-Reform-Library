@@ -1,9 +1,10 @@
-
+     <!---This is the page for the nav bar. Depending on what the user clicks,
+      it directs it to the page for that action -->
 <nav class="navbar navbar-nav navbar-fixed-top">
 <div class = "container">
  <div class="nav navbar-nav navbar-left">
     <a class="navbar-brand" href="/">
-      <%= link_to image_tag("logo.png", :size => "40x40", alt:"Immigration Library Home"), root_path %> 
+      <%= link_to image_tag("white_logo.png", :size => "40x40", alt:"Immigration Library Home"), root_path %> 
     </a> </li>
  </div>
   <ul class="nav navbar-nav navbar-left">
@@ -11,10 +12,12 @@
  </ul>
   <!--gets logo, set it to that size-->
    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+
       <li><%= link_to "Search", books_search_path %> </li>
          <% if user_signed_in? %>
-          	<li><%= link_to "Add Book", new_book_path %></li>
+          	<li><%= link_to "Add Resource", new_book_path %></li>
           <% end %>
+      <!--Builds dropdown for categories-->
       <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="dropdownMenuLink" aria-labelledby="dropdownMenu">Categories <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
@@ -27,6 +30,7 @@
 				</li>
         
     </ul>
+<!--What is displayed here depends on whether or not the user is logged in-->
 <ul class = "nav navbar-nav navbar-right">
     <% if user_signed_in? %>
 				<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>    

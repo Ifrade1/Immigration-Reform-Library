@@ -1,8 +1,10 @@
+<!--Creates search view page-->
+<!--USer can searrch a specific variable for their input-->
 <h1> Search<h1>
-    <%= search_form_for @search do |f| %>
+    <%= search_form_for @q do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title_cont, class: 'form-control' %>
-    <%= f.label :author %>
+    <%= f.label "Author\\Organization" %>
     <%= f.text_field :author_cont, class: 'form-control' %>
     <%= f.label :description %>
     <%= f.text_field :description_cont, class: 'form-control' %>

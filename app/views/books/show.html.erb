@@ -1,17 +1,22 @@
-
-<%=link_to "Back", root_path %>
+<!--This controls what is showed for each book action-->
 <h2><%= @book.title %> </h2>
 <h3><%= @book.author %> </h2>
 <h4>Category: <%=@book.category.name %></h4>
 <p><%= @book.description %> </p>
-<h4><%= @book.links %></h4>
+<div class=" col-xs-1">
+<%= button_to "Link", href = @book.links, :class => "btn btn-custom"%>
+ </div>
 <% if user_signed_in? %>
     <% if @book.user_id = current_user.id %>
-        <div class="btn btn-custom">
-        <%= link_to 'Edit', edit_book_path(@book),  :class => "btn" %>
+        <div class="col-xs-1">
+        <%= button_to 'Edit', edit_book_path(@book), :class =>"btn btn-custom" %>
         </div>
-        <div class="btn btn-custom">
-        <%= link_to 'Delete', book_path(@book), method: :destroy, data: {confirm: "Are you sure?" }, :class =>"btn" %>
+        <div class="col-xs-0">
+        <%= button_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" },  :class => "btn btn-custom" %>
         </div>
         <% end %>
+        </div>
 <% end %>
+<div class="btn btn-custom col-xs-3">
+<%=link_to 'Back', 'javascript:history.back()' %>
+ </div>

@@ -3,25 +3,26 @@ class BooksController < ApplicationController
 	#before_action :authenticate_user!, only: [:new, :edit]
     #defines index page
     def index
+        #index function.  #if no category is selected, then it dispalys all books, 
+        #or all books that meet search parameters
 		if params[:category].blank?
-			@books = Book.all.order("created_at DESC")
-		else
+            @books = Book.all.order("created_at DESC")
+             @q = Book.ransack(params[:q])
+             @books = @q.result(distinct: true)
+		else # if book category matches category selected, then it is displayed
 			@category_id = Category.find_by(name: params[:category]).id
-			@books = Book.where(:category_id => @category_id).order("created_at DESC")
+            @books = Book.where(:category_id => @category_id).order("created_at DESC")
         end
-        @q = Book.ransack(params[:q])
-        @books = @q.result
-        puts @books
+        
     end
-    def search
-        @search = Book.ransack(params[:search])
-        @books = @search.result(distinct: true)
-        puts @books
+    def search 
+        @q = Book.ransack(params[:q])
+        @books = @q.result(distinct: true)
     end
    def show
         
     end
-   def new
+   def new #creates a book, that belongs to a user and a category
 		@book = current_user.books.build
 		@categories = Category.all.map{ |c| [c.name, c.id] }
 	end
@@ -41,7 +42,7 @@ class BooksController < ApplicationController
 		redirect_to root_path
     end
     
-    def edit
+    def edit #categories have a name and id. so the book has the category id in a variables
         @categories = Category.all.map{ |c| [c.name, c.id] }
     end
     def update
@@ -54,10 +55,11 @@ class BooksController < ApplicationController
     end
 
     private
-        def book_params
-            params.require(:book).permit(:category_id, :title, :description, :author, :links)
+        def book_params #the book object can be created and added to database with just the title,
+            # but can have other variables attached as well
+            params.require(:book, :title).permit(:category_id,:description, :author, :links)
         end
-        def find_book
+        def find_book 
             @book = Book.find(params[:id])
         end
 
