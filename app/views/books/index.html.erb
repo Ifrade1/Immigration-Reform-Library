@@ -5,10 +5,12 @@
 	<div class="row">
 		<% @books.each do |book| %>
 		<div class = "book">
+		<!--Once clicked, directs the user to the book page-->
          <%= link_to book.title, book_path(book) %> 
          </div>   
 		<% end %>
 	</div>
 <% end %>	
-<%= link_to "Add Book", new_book_path %>
+		<!--Once clicked, directs the user to the add book page-->
+<%= link_to "Add Resource", new_book_path %>
 <%= link_to "Search", books_search_path %>

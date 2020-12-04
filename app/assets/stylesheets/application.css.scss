@@ -16,17 +16,10 @@
  *= require_tree .
  *= require_self
  */
-@import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500); 
+@import url(http://fonts.googleapis.com); 
 
 /* Variables, mixins, etc.. */
 
-@mixin background-tile {
-	box-sizing: border-box;
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 3px 3px 5px 6px #ccc;
-	padding: 1.5em 1.25em;
-}
 
 
 /* General styles */
@@ -45,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 10px; 
 	font-weight: 300;
 }
-
+/*alert styling */
 p.alert, p.notice {
 	margin: 0;
 }
@@ -53,8 +46,7 @@ body {
     padding-top: 30px; 
 }
 
-/* Navbar/navigation styles */
-
+/* Navbar/navigation styling. It should have green background with white text and white logo */
 .navbar {
 	font-family: 'Palatino', 'URW Palladio L', serif;
 	text-transform: uppercase;
@@ -82,7 +74,7 @@ body {
 		}
 
 	}
-
+/*styling for dropdown in navbar */
 	.dropdown-menu > li > a:hover {
 		background-color: darken(#107a27, 5%);
 		color: #fff;
@@ -94,7 +86,7 @@ body {
 	}
 
 }
-
+/*the current category should be highlighted */
 .dropdown-menu > .active > a {
 	background-color: #107a27;
 	color: #fff;
@@ -109,6 +101,7 @@ body {
 	padding: 8px 20px;
 	margin-bottom: 10px;
 	border-radius: 5px;
+	display: inline-block;
 	font-family: 'Palatino', 'URW Palladio L', serif;
 	&:hover {
 		text-decoration: none;
@@ -121,7 +114,7 @@ body {
 .btn-custom2 {
 	color: #333;
 	background-color: #fff;
-	border: 1px solid #222;
+	border: 1px solid #107a27;
 	text-color: #fff;
 	padding: 8px 20px;
 	border-radius: 5px;
@@ -133,7 +126,7 @@ body {
 		transition: 0.5s;
 	}	
 }
-
+/*set link styling */
 .links {
 
 	.btn-custom {
