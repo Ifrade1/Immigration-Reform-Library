@@ -6,7 +6,7 @@
 		<% @books.each do |book| %>
 		<div class = "book">
 		<!--Once clicked, directs the user to the book page-->
-         <%= link_to book.titlse, book_path(book) %> 
+         <%= link_to book.title, book_path(book) %> 
          </div>   
 		<% end %>
 	</div>
