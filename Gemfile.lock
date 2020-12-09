@@ -96,6 +96,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_zxcvbn (5.1.0)
+      devise
+      zxcvbn-js (~> 4.4.1)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1-x64-mingw32)
@@ -244,6 +247,8 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.0)
+    zxcvbn-js (4.4.3)
+      execjs
 
 PLATFORMS
   x64-mingw32
@@ -255,6 +260,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   coffee-rails (~> 5.0)
   devise (~> 4.7, >= 4.7.3)
+  devise_zxcvbn
   jbuilder (~> 2.7)
   jquery-rails (~> 4.3, >= 4.3.1)
   paperclip (~> 4.2.1)

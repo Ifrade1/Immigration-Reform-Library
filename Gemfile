@@ -7,6 +7,7 @@ ruby '2.7.2'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -24,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'devise_zxcvbn'
 gem 'paperclip', '~> 4.2.1'
 gem 'uglifier', '~> 4.2'
 gem 'coffee-rails', '~> 5.0'
