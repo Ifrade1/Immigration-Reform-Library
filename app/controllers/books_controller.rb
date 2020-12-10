@@ -62,7 +62,8 @@ class BooksController < ApplicationController
             params.require(:book, :title).permit(:category_id,:description, :author, :links)
         end
         def find_book 
-            @book = Book.find(params[:id])
+            current_user = User.find(session[:user_id])
+            current_user.books.find(params[:id])
         end
 
 end
