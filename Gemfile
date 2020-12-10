@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -27,7 +27,7 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'devise_zxcvbn'
 gem 'bundler-audit'
-gem 'paperclip', '~> 4.2.1'
+gem 'paperclip'
 gem 'uglifier', '~> 4.2'
 gem 'coffee-rails', '~> 5.0'
 gem 'brakeman'

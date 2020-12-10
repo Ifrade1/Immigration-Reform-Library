@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :migrations
 get 'books/search'
 devise_for :users
 devise_scope :user do
