@@ -1,6 +1,8 @@
+#Note: "books" technically can be legal associations or online resources
 class BooksController < ApplicationController
     before_action :find_book, only: [:show, :edit, :update, :destroy]
-	#before_action :authenticate_user!, only: [:new, :edit]
+    before_action :authenticate_user!, only: [:new, :edit]
+    #user needs to be signed in before those pages are show
     #defines index page
     def index
         #index function.  #if no category is selected, then it dispalys all books, 
@@ -60,7 +62,8 @@ class BooksController < ApplicationController
             params.require(:book, :title).permit(:category_id,:description, :author, :links)
         end
         def find_book 
-            @book = Book.find(params[:id])
+            current_user = User.find(session[:user_id])
+            current_user.books.find(params[:id])
         end
 
 end
