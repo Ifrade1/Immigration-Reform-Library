@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#seeds the category model
+#With this, new categories can be added. 
 Category.create(name: 'Books')
 Category.create(name: 'Online Resources')
 Category.create(name: 'Legal Associations')
